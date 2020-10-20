@@ -1,0 +1,65 @@
+html {
+    box-sizing: border-box;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(41, 41, 41);
+    grid-gap: 20px;
+    
+}
+
+.top-section {
+    background-color: red;
+    margin: 30px 20px;
+}
+
+#title {
+    grid-column: 1 / span 1;
+}
+
+#date-container {
+    grid-column: 2 / span 1;
+    text-align: right;
+}
+
+.themes {
+    display: flex;
+    align-content: flex-end;
+    width: 40%;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.colorbox {
+    width: 25px;
+    height: 25px;
+}
+
+#black {
+    background-color: grey;
+}
+
+#red {
+    background-color: pink;
+}
+
+#green {
+    background-color: seagreen;
+   
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+.heading , .tasks{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.days, .checkbox-holder{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}

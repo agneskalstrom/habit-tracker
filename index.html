@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit list</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <section class="container">
+            <div class="top-section" id="title">
+                <h1>Habit Tracker</h1>
+                <p id="greeting"></p>
+            </div>
+            <div class="top-section" id="date-container">
+                <div class="date">
+                    <h2>time</h2>
+                </div>
+                <div class="themes">
+                    <div id="black" class="colorbox"></div>
+                    <div id="red" class="colorbox"></div>
+                    <div id="green" class="colorbox"></div>
+                    <div id="yellow" class="colorbox"></div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <div class="tracker">
+            <div class="heading">
+
+            </div>
+            <div class="heading">
+                <div class="task-holder empty">
+                    <div class="topic">
+                        <h4>My Habits</h4>
+                    </div>
+                </div>
+                <div class="days">
+                    <div class="day-of-week mon">
+                        <h4>Mon</h4>
+                    </div>
+                    <div class="day-of-week tue">
+                        <h4>Tue</h4>
+                    </div>
+                    <div class="day-of-week wed">
+                        <h4>Wed</h4>
+                    </div>
+                    <div class="day-of-week thu">
+                        <h4>Thr</h4>
+                    </div>
+                    <div class="day-of-week fri">
+                        <h4>Fri</h4>
+                    </div>
+                    <div class="day-of-week sat">
+                        <h4>Sat</h4>
+                    </div>
+                    <div class="day-of-week sun">
+                        <h4>Sun</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule">
+                <div class="row">
+                    <div class="item">
+                        <p class="itemname">Drink water</p>
+                        <i class="fa fa-trash-alt"></i>
+                    </div>
+                    <div class="checkbox">
+                        <div class="box_1"></div>
+                        <div class="box_2"></div>
+                        <div class="box_3"></div>
+                        <div class="box_4"></div>
+                        <div class="box_5"></div>
+                        <div class="box_6"></div>
+                        <div class="box_7"></div>
+                    </div>
+                </div>
+                <div class="input">
+                    <input type="text" id="user-input" name="user-input" placeholder="Add a new habit">
+                    <button type="button" class="btn"><i class="fas fa-plus-circle"></i></button>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
