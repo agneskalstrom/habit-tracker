@@ -89,4 +89,5 @@ section {
 
 .task-holder, .checkbox-holder {
     margin-bottom: 0.5rem;
+    color: inherit;
 }
