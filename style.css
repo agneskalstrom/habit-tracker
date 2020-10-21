@@ -7,7 +7,6 @@ section {
     grid-template-columns: 1fr 1fr;
     background-color: rgb(41, 41, 41);
     grid-gap: 20px;
-    
 }
 
 .top-section {
@@ -47,19 +46,47 @@ section {
 
 #green {
     background-color: seagreen;
-   
 }
 
 #yellow {
     background-color: yellow;
 }
 
-.heading , .tasks{
+.heading, .tasks {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.days, .checkbox-holder{
+.days, .checkbox-holder {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.center {
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+    color: rgb(143, 129, 129);
+    font-size: 40px;
+}
+
+.toright {
+    margin-right: 1rem;
+    float: right;
+}
+
+.day-of-week, .task-checkbox {
+    margin: 2px;
+    border-radius: 4px;
+}
+
+.task-holder {
+    background: rgb(20, 19, 19);
+    border-radius: 8px;
+    color: rgb(236, 223, 223);
+    padding-left: 15px;
+}
+
+.task-holder, .checkbox-holder {
+    margin-bottom: 0.5rem;
 }
