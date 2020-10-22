@@ -33,14 +33,15 @@
         </section>
     </header>
 
-    <div class="tracker">
+    <main>
+        <div class="tracker">
+            <div class="heading">
+                <div class="task-holder-title empty">
+                    <div class="topic">
+                        <h4>My Habits</h4>
+                    </div>
 
-        <div class="heading">
-            <div class="task-holder-title empty">
-                <div class="topic">
-                    <h4>My Habits</h4>
-                </div>
-            </div>
+               </div>
             <div class="days">
                 <div class="day-of-week mon">
                     <h4>Mon</h4>
@@ -48,7 +49,7 @@
                 <div class="day-of-week tue">
                     <h4>Tue</h4>
                 </div>
-                <div class="day-of-week wed">
+               <div class="day-of-week wed">
                     <h4>Wed</h4>
                 </div>
                 <div class="day-of-week thu">
@@ -63,37 +64,39 @@
                 <div class="day-of-week sun">
                     <h4>Sun</h4>
                 </div>
+              </div>
+            <div id="tasks-container" class="habits tasks">
+                <div class="task-holder">
+                    <p class="text">Go for a walk</p>
+                    <button type="button" class="deletebtn" onclick="this.parentElement.parentElement.remove()"><i class="fa fa-trash-alt"></i></button>
+                </div>
+                <div class="checkbox-holder">
+                    <div class="task-checkbox"></div>
+                    <div class="task-checkbox"></div>
+                    <div class="task-checkbox"></div>
+                    <div class="task-checkbox"></div>
+                    <div class="task-checkbox"></div>
+                    <div class="task-checkbox"></div>
+                    <div class="task-checkbox"></div>                
             </div>
-        </div>
-        <div id="tasks-container" class="habits tasks">
+            <div class="add-items">
+                <input type="text" id="input-habit" name="input-habit" placeholder="Add a habit">
+                <button onclick="addNewHabit()"><i class="fas fa-plus-circle" id="add"></i></button>
+            </div>
+             
+            <div id="tasks-container" class="habits tasks">
             <div class="task-holder">
                 <p class="text">Go for a walk
                     <button><i class="fa fa-trash-alt toright"></i></button>
                 </p>
             </div>
-            <div class="checkbox-holder">
-                <div class="task-checkbox"><i class="far fa-square center"></i></div>
-                <div class="task-checkbox"><i class="far fa-square center"></i></div>
-                <div class="task-checkbox"><i class="far fa-square center"></i></div>
-                <div class="task-checkbox"><i class="far fa-square center"></i></div>
-                <div class="task-checkbox"><i class="far fa-square center"></i></div>
-                <div class="task-checkbox"><i class="far fa-square center"></i></div>
-                <div class="task-checkbox"><i class="far fa-square center"></i></div>
-            </div>
+            
         </div>
-        <br>
-        <div class="add-items">
-            <input type="text" id="input-habit" name="input-habit" placeholder="Add a habit">
-            <button onclick="addNewHabit()"><i class="fas fa-plus-circle" id="add"></i></button>
-
         </div>
-
-    </div>
-    </div>
-    </div>
-
-
+    
+    </main>
     <script src="tracker.js"></script>
 </body>
 
 </html>
+
