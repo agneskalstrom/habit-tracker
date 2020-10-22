@@ -1,29 +1,27 @@
-/* CSS RESET */
-
+/* CSS RESET */ 
 html {
     box-sizing: border-box;
     font-size: 16px;
-}
-
-*, *:before, *:after {
+  }
+  
+  *, *:before, *:after {
     box-sizing: inherit;
-}
-
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
     font-weight: normal;
-}
-
-ol, ul {
+  }
+  
+  ol, ul {
     list-style: none;
-}
-
-img {
+  }
+  
+  img {
     max-width: 100%;
     height: auto;
-}
-
+  }
 /* END CSS RESET */
 
 body {
@@ -34,13 +32,6 @@ body {
 header {
     background-color: #343434;
     color: #fff;
-}
-
-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: rgb(41, 41, 41);
-    grid-gap: 20px;
 }
 
 header p {
@@ -101,13 +92,13 @@ h4 {
     width: 3em;
 }
 
-.habits.tasks {
+ .habits.tasks {
     display: grid;
     grid-template-columns: 37% 60%;
-    grid-gap: 3%;
+    grid-gap: 3%; 
 }
 
-.checkbox-holder, .days {
+.checkbox-holder, .days  {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     justify-items: end;
@@ -119,6 +110,13 @@ h4 {
     width: 3em;
     border-radius: .6em;
     height: 3em;
+}
+
+.task-checked {
+    background-color: #32a852;
+    width: 3em;
+    border-radius: .6em;
+    height: 3em;   
 }
 
 .task-holder {
@@ -140,8 +138,8 @@ h4 {
     background: none;
     border: none;
     color: #fff;
-    float: right;
-    padding-right: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 .add-items {
@@ -198,41 +196,3 @@ input {
     background-color: #BFB96C;
 }
 
-.heading, .tasks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.days, .checkbox-holder {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.center {
-    text-align: center;
-    width: 100%;
-    margin-top: 5px;
-    color: rgb(143, 129, 129);
-    font-size: 40px;
-}
-
-.toright {
-    float: right;
-    padding-right: 10px;
-}
-
-.day-of-week, .task-checkbox {
-    margin: 2px;
-    border-radius: 4px;
-}
-
-.task-holder {
-    background: rgb(20, 19, 19);
-    border-radius: 8px;
-    color: rgb(236, 223, 223);
-    padding-left: 15px;
-}
-
-.task-holder, .checkbox-holder {
-    margin-bottom: 0.5rem;
-}
