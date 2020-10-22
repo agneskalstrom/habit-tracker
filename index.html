@@ -7,7 +7,8 @@
     <title>Habit list</title>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +16,8 @@
         <section class="container">
             <div class="top-section" id="title">
                 <h1>Habit Tracker</h1>
-                <p id="greeting">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et enim leo. Suspendisse pharetra massa non diam vehicula ultrices.</p>
+                <p id="greeting">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et enim leo.
+                    Suspendisse pharetra massa non diam vehicula ultrices.</p>
             </div>
             <div class="top-section" id="date-container">
                 <div class="date">
@@ -30,6 +32,7 @@
             </div>
         </section>
     </header>
+
     <main>
         <div class="tracker">
             <div class="heading">
@@ -37,31 +40,31 @@
                     <div class="topic">
                         <h4>My Habits</h4>
                     </div>
+
+               </div>
+            <div class="days">
+                <div class="day-of-week mon">
+                    <h4>Mon</h4>
                 </div>
-                <div class="days">
-                    <div class="day-of-week mon">
-                        <h4>Mon</h4>
-                    </div>
-                    <div class="day-of-week tue">
-                        <h4>Tue</h4>
-                    </div>
-                    <div class="day-of-week wed">
-                        <h4>Wed</h4>
-                    </div>
-                    <div class="day-of-week thu">
-                        <h4>Thu</h4>
-                    </div>
-                    <div class="day-of-week fri">
-                        <h4>Fri</h4>
-                    </div>
-                    <div class="day-of-week sat">
-                        <h4>Sat</h4>
-                    </div>
-                    <div class="day-of-week sun">
-                        <h4>Sun</h4>
-                    </div>
+                <div class="day-of-week tue">
+                    <h4>Tue</h4>
                 </div>
-            </div>
+               <div class="day-of-week wed">
+                    <h4>Wed</h4>
+                </div>
+                <div class="day-of-week thu">
+                    <h4>Thu</h4>
+                </div>
+                <div class="day-of-week fri">
+                    <h4>Fri</h4>
+                </div>
+                <div class="day-of-week sat">
+                    <h4>Sat</h4>
+                </div>
+                <div class="day-of-week sun">
+                    <h4>Sun</h4>
+                </div>
+              </div>
             <div id="tasks-container" class="habits tasks">
                 <div class="task-holder">
                     <p class="text">Go for a walk</p>
@@ -74,16 +77,26 @@
                     <div class="task-checkbox"></div>
                     <div class="task-checkbox"></div>
                     <div class="task-checkbox"></div>
-                    <div class="task-checkbox"></div>
-                </div>
+                    <div class="task-checkbox"></div>                
             </div>
             <div class="add-items">
                 <input type="text" id="input-habit" name="input-habit" placeholder="Add a habit">
                 <button onclick="addNewHabit()"><i class="fas fa-plus-circle" id="add"></i></button>
             </div>
+             
+            <div id="tasks-container" class="habits tasks">
+            <div class="task-holder">
+                <p class="text">Go for a walk
+                    <button><i class="fa fa-trash-alt toright"></i></button>
+                </p>
+            </div>
+            
         </div>
+        </div>
+    
     </main>
     <script src="tracker.js"></script>
 </body>
 
 </html>
+
