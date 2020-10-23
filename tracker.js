@@ -76,7 +76,7 @@ function clearTextBox() {
 function changeColor(color) {
     document.getElementById("header").style.backgroundColor = color;
     const taskHolder = document.getElementsByClassName("task-holder");
-        for(var i = 0; i < 100; i++){
+        for(var i = 0; i < taskHolder.length; i++){
             taskHolder[i].style.backgroundColor = color;
         }
 }
