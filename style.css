@@ -36,13 +36,6 @@ header {
     color: #fff;
 }
 
-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: rgb(41, 41, 41);
-    grid-gap: 20px;
-}
-
 header p {
     line-height: 1.5;
     font-weight: 100;
@@ -55,6 +48,7 @@ header p {
     justify-content: space-between;
     width: 80%;
     margin: auto;
+    align-items: center;
 }
 
 #title {
@@ -70,6 +64,10 @@ h1 {
     font-size: 4em;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+header p {
+    width: 24em;
 }
 
 p {
@@ -101,10 +99,11 @@ h4 {
     width: 3em;
 }
 
-.habits.tasks {
+.row {
     display: grid;
     grid-template-columns: 37% 60%;
     grid-gap: 3%;
+    margin-bottom: 1em;
 }
 
 .checkbox-holder, .days {
@@ -118,7 +117,6 @@ h4 {
     background-color: #eee;
     width: 3em;
     border-radius: .6em;
-    height: 3em;
 }
 
 .task-holder {
@@ -129,7 +127,6 @@ h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;
 }
 
 .task-holder p {
@@ -165,7 +162,7 @@ input {
     border: 0;
     color: #7F807C;
     margin: 0;
-    padding: 0;
+    padding-right: 10px;
 }
 
 .themes {
@@ -183,56 +180,51 @@ input {
 
 #black {
     background-color: #343434;
-    border: 4px solid #fff;
+    box-shadow: 2px 2px #616060;
 }
+
 
 #red {
     background-color: #C76060;
+    box-shadow: 2px 2px #904343;
 }
+
 
 #green {
     background-color: #6CB6BF;
+    box-shadow: 2px 2px #4a7c82;
 }
+
 
 #yellow {
     background-color: #BFB96C;
+    box-shadow: 2px 2px #86824c;
 }
 
-.heading, .tasks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+@media screen and (max-width: 800px) {
+    .container {
+        display: block;
+        width: 90%;
+    }
 
-.days, .checkbox-holder {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
+    #title {
+        width: 100%;
+    }
 
-.center {
-    text-align: center;
-    width: 100%;
-    margin-top: 5px;
-    color: rgb(143, 129, 129);
-    font-size: 40px;
-}
+    #date-container {
+        width: 100%;
+        text-align: left;
+    }
 
-.toright {
-    float: right;
-    padding-right: 10px;
-}
+    .themes {
+    justify-content: flex-start;
+    }
 
-.day-of-week, .task-checkbox {
-    margin: 2px;
-    border-radius: 4px;
-}
+    .tracker {
+        width: 90%;
+    }
 
-.task-holder {
-    background: rgb(20, 19, 19);
-    border-radius: 8px;
-    color: rgb(236, 223, 223);
-    padding-left: 15px;
-}
-
-.task-holder, .checkbox-holder {
-    margin-bottom: 0.5rem;
+    .colorbox:nth-child(1) {
+        margin-left: 0;
+    }
 }

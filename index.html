@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habit list</title>
+    <title>Habit Tracker</title>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
@@ -12,22 +12,22 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <section class="container">
             <div class="top-section" id="title">
                 <h1>Habit Tracker</h1>
-                <p id="greeting">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et enim leo.
-                    Suspendisse pharetra massa non diam vehicula ultrices.</p>
+                <p><span id="greeting"></span> Welcome to the Habit Tracker. Add habits and track your progress below.</p>
             </div>
             <div class="top-section" id="date-container">
-                <div class="date">
-                    <h2>time</h2>
+                <div class="currentdate">
+                    <h2 id="date"></h2>
+                    <h2 id="time"></h2>
                 </div>
                 <div class="themes">
-                    <div id="black" class="colorbox"></div>
-                    <div id="red" class="colorbox"></div>
-                    <div id="green" class="colorbox"></div>
-                    <div id="yellow" class="colorbox"></div>
+                    <div id="black" class="colorbox" onclick ="changeColor('#343434')"></div>
+                    <div id="red" class="colorbox" onclick ="changeColor('#C76060')"></div>
+                    <div id="green" class="colorbox" onclick ="changeColor('#6CB6BF')"></div>
+                    <div id="yellow" class="colorbox" onclick ="changeColor('#BFB96C')"></div>
                 </div>
             </div>
         </section>
@@ -66,21 +66,22 @@
                 </div>
             </div>
             <div id="tasks-container" class="habits tasks">
-                <div class="task-holder">
-                    <p class="text">Go for a walk</p>
-                    <button onclick="removeHabit(this)" type="button" class="deletebtn"><i class="fa fa-trash-alt"
-                            job="delete"></i></button>
+                <div class="row">
+                    <div class="task-holder">
+                        <p class="text">Go for a walk</p>
+                        <button onclick="removeHabit(this)" type="button" class="deletebtn"><i class="fa fa-trash-alt"
+                                job="delete"></i></button>
+                    </div>
+                    <div class="checkbox-holder">
+                        <div class="task-checkbox"></div>
+                        <div class="task-checkbox"></div>
+                        <div class="task-checkbox"></div>
+                        <div class="task-checkbox"></div>
+                        <div class="task-checkbox"></div>
+                        <div class="task-checkbox"></div>
+                        <div class="task-checkbox"></div>
+                    </div>
                 </div>
-                <div class="checkbox-holder">
-                    <div class="task-checkbox"></div>
-                    <div class="task-checkbox"></div>
-                    <div class="task-checkbox"></div>
-                    <div class="task-checkbox"></div>
-                    <div class="task-checkbox"></div>
-                    <div class="task-checkbox"></div>
-                    <div class="task-checkbox"></div>
-                </div>
-
 
             </div>
             <div class="add-items">
