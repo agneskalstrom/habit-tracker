@@ -80,3 +80,4 @@ function changeColor(color) {
             taskHolder[i].style.backgroundColor = color;
         }
 }
+
