@@ -22,7 +22,7 @@ document.getElementById("greeting").innerText = greeting + ", " + userName + "!"
 
 let nextTaskId = 1;
 const list = document.getElementById("tasks-container");
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+let tasks = [];
 function addHabit(habit, id) {
     const text = `<div class="row">
     <div class="task-holder">
@@ -42,19 +42,28 @@ function addHabit(habit, id) {
 </div>`
     //created an array for the stuff to push to the const task 
     const task = {
-        name: habit,
+        task: habit,
         id: id  
     };
     const position = "beforeEnd"
     list.insertAdjacentHTML(position, text);
-    tasks.push(task);
-   
+    tasks.push(task);  
+    saveToLocalStorage(); 
+  
 }
-
+/* //function for saving to localStorage
 //function for saving to localStorage
-let saveToLocalStorage = () => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+function saveToLocalStorage() {
+    if (tasks == null) {
+    localStorage.setItem('task', JSON.stringify(tasks));
+    } else {
+    let getTasks = JSON.parse(localStorage.getItem("tasks"));
+    getTasks.push(task)
+    localStorage.setItem('task', JSON.stringify(tasks))
     }
+}
+*/
+
 
 const input = document.getElementById("input-habit");
 document.addEventListener("keyup", function (e) {
@@ -63,28 +72,35 @@ document.addEventListener("keyup", function (e) {
     }
 })
 
-//This should all be Event Delegation
-//select checkboxes and add same event listener to all
-let checkBoxes = document.querySelectorAll('.task-checkbox');
-checkBoxes.forEach(checkBox => {
-    checkBox.addEventListener('click', completed);
-})  
+//checking (all) boxes (hence the loop)
+let checkBox = document.getElementsByClassName('task-checkbox');
+let checkBoxes = checkBox.length;
+for (var i = 0; i < checkBoxes; i++) {
+    checkBox[i].addEventListener('click', completed, false);
+}
 //function that adds CSS styling class (task-completed, created in CSS sheet)
-function completed() {
-    this.classList.toggle("task-completed");
-}  
-
+function completed(e) {
+    e.target.classList.toggle("task-completed");
+}
 
 function addNewHabit() {
     const habit = input.value;
     if (habit) {
         addHabit(habit, nextTaskId++);
         clearTextBox();
+
     }
     input.value = "";
-    saveToLocalStorage();         
-}
 
+    //user able to checkboxes for each new habit as well, hence inside the new habit function
+    checkBox = document.getElementsByClassName('task-checkbox');
+    checkBoxes = checkBox.length;
+    for (let i = 0; i < checkBoxes; i++) {
+    checkBox[i].addEventListener('click', completed, false);
+    }
+    /* saveToLocalStorage(); */
+
+}
 
 function removeHabit(element) {
     element.parentNode.parentNode.remove();
@@ -103,9 +119,16 @@ function changeColor(color) {
         }
 }
 
+let saveToLocalStorage = () => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
-//get data from localstorage how? 
-/* addHabit(tasks, list); */
+let getFromLocalStorage = JSON.parse(localStorage.getItem("tasks"));
+console.log(getFromLocalStorage);
+
+
+
+
 
 
 
