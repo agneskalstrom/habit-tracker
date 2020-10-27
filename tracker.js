@@ -11,7 +11,7 @@ let currentTime = date.getHours();
 if(currentTime < 12) {
     greeting = "Good morning";
 }
-else if(currentTime > 12 && currentTime < 16) {
+else if(currentTime >= 12 && currentTime < 16) {
     greeting = "Good afternoon";
 }
 else if(currentTime > 16) {
@@ -20,12 +20,23 @@ else if(currentTime > 16) {
 
 document.getElementById("greeting").innerText = greeting + ", " + userName + "!";    
 
+let color;
+
+function changeColor(newColor) {
+    document.getElementById("header").style.backgroundColor = newColor;
+    const taskHolder = document.getElementsByClassName("task-holder");
+        for(let i = 0; i < taskHolder.length; i++){
+            taskHolder[i].style.backgroundColor = newColor;
+        }   
+    color = newColor;
+}
+
 let nextTaskId = 1;
 const list = document.getElementById("tasks-container");
 let tasks = [];
 function addHabit(habit, id) {
     const text = `<div class="row">
-    <div class="task-holder">
+    <div class="task-holder" style="background-color:` + color +`;">
         <p class="text">${habit}
         </p>
         <button onclick="removeHabit(this)" type="button" class="deletebtn"><i class="fa fa-trash-alt" job="delete"></i></button>
@@ -71,12 +82,4 @@ function removeHabit(element) {
 
 function clearTextBox() {
     document.getElementById("input-habit").value = "";
-}
-
-function changeColor(color) {
-    document.getElementById("header").style.backgroundColor = color;
-    const taskHolder = document.getElementsByClassName("task-holder");
-        for(var i = 0; i < taskHolder.length; i++){
-            taskHolder[i].style.backgroundColor = color;
-        }
 }
