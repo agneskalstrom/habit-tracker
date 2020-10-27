@@ -119,6 +119,12 @@ h4 {
     border-radius: .6em;
 }
 
+
+.task-uncompleted {
+    background-color:black;
+    width: 3em;
+    border-radius: .6em;
+}
 .task-completed {
     background-color: #32a852;
     width: 3em;

@@ -22,7 +22,7 @@ document.getElementById("greeting").innerText = greeting + ", " + userName + "!"
 
 let nextTaskId = 1;
 const list = document.getElementById("tasks-container");
-let tasks = [];
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 function addHabit(habit, id) {
     const text = `<div class="row">
     <div class="task-holder">
@@ -40,13 +40,21 @@ function addHabit(habit, id) {
     <div class="task-checkbox"></div>
 </div>
 </div>`
+    //created an array for the stuff to push to the const task 
+    const task = {
+        name: habit,
+        id: id  
+    };
     const position = "beforeEnd"
     list.insertAdjacentHTML(position, text);
-    tasks.push({
-        name: habit,
-        id: id
-    })
+    tasks.push(task);
+   
 }
+
+//function for saving to localStorage
+let saveToLocalStorage = () => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
 
 const input = document.getElementById("input-habit");
 document.addEventListener("keyup", function (e) {
@@ -55,16 +63,17 @@ document.addEventListener("keyup", function (e) {
     }
 })
 
-//checking (all) boxes (hence the loop)
-let checkBox = document.getElementsByClassName('task-checkbox');
-let checkBoxes = checkBox.length;
-for (var i = 0; i < checkBoxes; i++) {
-    checkBox[i].addEventListener('click', completed, false);
-}
+//This should all be Event Delegation
+//select checkboxes and add same event listener to all
+let checkBoxes = document.querySelectorAll('.task-checkbox');
+checkBoxes.forEach(checkBox => {
+    checkBox.addEventListener('click', completed);
+})  
 //function that adds CSS styling class (task-completed, created in CSS sheet)
 function completed() {
     this.classList.toggle("task-completed");
-}
+}  
+
 
 function addNewHabit() {
     const habit = input.value;
@@ -73,17 +82,9 @@ function addNewHabit() {
         clearTextBox();
     }
     input.value = "";
-
-    //user able to checkboxes for each new habit as well, hence inside the new habit function
-    let checkBox = document.getElementsByClassName('task-checkbox');
-    let checkBoxes = checkBox.length;
-    for (var i = 0; i < checkBoxes; i++) {
-    checkBox[i].addEventListener('click', completed, false);
-    }
-    function completed() {
-    this.classList.toggle("task-completed");
-    }
+    saveToLocalStorage();         
 }
+
 
 function removeHabit(element) {
     element.parentNode.parentNode.remove();
@@ -101,6 +102,11 @@ function changeColor(color) {
             taskHolder[i].style.backgroundColor = color;
         }
 }
+
+
+//get data from localstorage how? 
+/* addHabit(tasks, list); */
+
 
 
 
