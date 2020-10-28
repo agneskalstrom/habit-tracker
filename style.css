@@ -117,6 +117,15 @@ h4 {
     background-color: #eee;
     width: 3em;
     border-radius: .6em;
+    cursor: pointer;
+}
+
+
+.task-completed {
+    background-color: #32a852;
+    width: 3em;
+    border-radius: .6em;
+    cursor: pointer;
 }
 
 .task-holder {
@@ -139,6 +148,11 @@ h4 {
     color: #fff;
     float: right;
     padding-right: 10px;
+    cursor: pointer;
+}
+
+#add {
+    cursor: pointer;
 }
 
 .add-items {
@@ -176,6 +190,7 @@ input {
     border-radius: .4em;
     margin-left: 1em;
     margin-top: 1em;
+    cursor: pointer;
 }
 
 #black {
