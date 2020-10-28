@@ -8,7 +8,6 @@ window.onload = function greet(){
     document.getElementById("greeting").innerText = greeting + ", " + name + "!";  
 } 
   
-
 const date = new Date();
 const dateOptions = { weekday: 'long', month: 'long', day: 'numeric' };
 const timeOptions = { hour: '2-digit', minute:'2-digit' };
@@ -20,13 +19,12 @@ let currentTime = date.getHours();
 if(currentTime < 12) {
     greeting = "Good morning";
 }
-else if(currentTime > 12 && currentTime < 16) {
+else if(currentTime >= 12 && currentTime < 16) {
     greeting = "Good afternoon";
 }
-else if(currentTime > 16) {
+else if(currentTime >= 16) {
     greeting = "Good evening";
 }
-
 
 let nextTaskId = 1;
 const list = document.getElementById("tasks-container");
@@ -37,7 +35,7 @@ let tasks = [{
 
 function displayTask(habit, id) {
     const text = `<div class="row">
-    <div class="task-holder">
+    <div class="task-holder" style="background-color:`+ color +`;">
         <p class="text">${habit}
         </p>
         <button onclick="removeHabit(this)" type="button" class="deletebtn"><i class="fa fa-trash-alt" job="delete"></i></button>
@@ -107,12 +105,15 @@ function clearTextBox() {
     document.getElementById("input-habit").value = "";
 }
 
-function changeColor(color) {
-    document.getElementById("header").style.backgroundColor = color;
+let color;
+
+function changeColor(newColor) {
+    document.getElementById("header").style.backgroundColor = newColor;
     const taskHolder = document.getElementsByClassName("task-holder");
-        for(var i = 0; i < taskHolder.length; i++){
-            taskHolder[i].style.backgroundColor = color;
-        }
+        for(let i = 0; i < taskHolder.length; i++){
+            taskHolder[i].style.backgroundColor = newColor;
+        }   
+    color = newColor;
 }
 
 //function that adds CSS styling class (task-completed, created in CSS sheet)
